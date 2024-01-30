@@ -1,0 +1,17 @@
+USRI: 2.E
+VERSION: 0.1.0.0
+VENDOR: polynum
+FLAGS: PUBLISHED
+LANG: C
+NAME: kerTeX pkg: opt packages.
+AUTHORS: Thierry Laronde <tlaronde@polynum.com>.
+DESCRIPTION: sh(1) scripts using the kertex:pkglib.sh facilities
+	to add external packages to the TeX kernel system.
+REQUIRE:
+ELEMENTS:
+LINK:
+DEPENDS: 1003.2
+BUILD_DEPENDS:
+RUN_DEPENDS:
+PROVIDE:
+COMMENTS:
