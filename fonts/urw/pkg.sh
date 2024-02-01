@@ -145,7 +145,7 @@ BEGIN_CID
 NAME: fonts/urw
 DESCRIPTION: URW PostScript Type-1 fonts with tfm and vf
 AUTHOR: URW
-VERSION: 1992, 2006-03-21, 2014-08-28, 2005-07-07, 1992, 2005-02-02
+VERSION: 1992, 2006-03-21, 2014-08-28, 2005-07-07, 1992, 2005-02-02, 2022-09-29
 LICENCE: Aladdin Free Public License and LaTeX PPL >= 1.3
 KERTEX_VERSION: 0.99.22.0
 KXPATH:
@@ -224,10 +224,6 @@ SOURCES:
 	GET utmri8a.afm
 	GET uzcmi8a.afm
 	GET uzdr.afm
-	GET /fonts/urw/classico/afm/URWClassico-Bold.afm
-	GET URWClassico-BoldItalic.afm
-	GET URWClassico-Italic.afm
-	GET URWClassico-Regular.afm
 	GET /fonts/urw/garamond/ugmm8a.afm
 	GET ugmmi8a.afm
 	GET ugmr8a.afm
@@ -236,10 +232,7 @@ SOURCES:
 	GET /fonts/urw/lettergothic/ulgb8a.afm
 	GET ulgbi8a.afm
 	LCD HOME/enc 
-	GET /fonts/urw/classico/enc/clsc_kucjq6.enc
-	GET clsc_kxvyln.enc
-	GET clsc_tyth7d.enc
-	GET clsc_zsv5c7.enc
+	GET /fonts/urw/classico/enc/ /\.enc$/
 	LCD HOME/pfb 
 	GET /fonts/urw/antiqua/fonts/uaqr8ac.pfb
 	GET /fonts/urw/arial/type1/ua1b8a.pfb
@@ -283,16 +276,7 @@ SOURCES:
 	GET utmri8a.pfb
 	GET uzcmi8a.pfb
 	GET uzdr.pfb
-	GET /fonts/urw/classico/type1/URWClassico-Bold.pfb
-	GET URWClassico-BoldItalic.pfb
-	GET URWClassico-BoldItalicLCDFJ.pfb
-	GET URWClassico-BoldLCDFJ.pfb
-	GET URWClassico-Italic.pfb
-	GET URWClassico-ItalicLCDFJ.pfb
-	GET URWClassico-Regular.pfb
-	GET URWClassico-RegularLCDFJ.pfb
-	GET uopb8a.pfb
-	GET uopr8a.pfb
+	GET /fonts/urw/classico/type1/ /\.pfb$/
 	GET /fonts/urw/garamond/ugmm8a.pfb
 	GET ugmmi8a.pfb
 	GET ugmr8a.pfb
@@ -317,26 +301,7 @@ SOURCES:
 	GET ua1r8t.vf
 	GET ua1ri8c.vf
 	GET ua1ri8t.vf
-	GET /fonts/urw/classico/vf/URWClassico-Bold-lf-ly1.vf
-	GET URWClassico-Bold-lf-ot1.vf
-	GET URWClassico-Bold-lf-t1.vf
-	GET URWClassico-Bold-lf-ts1.vf
-	GET URWClassico-BoldItalic-lf-ly1.vf
-	GET URWClassico-BoldItalic-lf-ot1.vf
-	GET URWClassico-BoldItalic-lf-t1.vf
-	GET URWClassico-BoldItalic-lf-ts1.vf
-	GET URWClassico-Italic-lf-ly1.vf
-	GET URWClassico-Italic-lf-ot1.vf
-	GET URWClassico-Italic-lf-t1.vf
-	GET URWClassico-Italic-lf-ts1.vf
-	GET URWClassico-Regular-lf-ly1.vf
-	GET URWClassico-Regular-lf-ot1.vf
-	GET URWClassico-Regular-lf-t1.vf
-	GET URWClassico-Regular-lf-ts1.vf
-	GET uopbc7t.vf
-	GET uopbc8t.vf
-	GET uoprc7t.vf
-	GET uoprc8t.vf
+	GET /fonts/urw/classico/vf/ /\.vf$/
 	LCD HOME/tfm 
 	GET /fonts/urw/antiqua/fonts/uaqr7tc.tfm
 	GET uaqr8ac.tfm
@@ -365,40 +330,7 @@ SOURCES:
 	GET ua1ri8c.tfm
 	GET ua1ri8r.tfm
 	GET ua1ri8t.tfm
-	GET /fonts/urw/classico/tfm/URWClassico-Bold-lf-ly1--base.tfm
-	GET URWClassico-Bold-lf-ly1.tfm
-	GET URWClassico-Bold-lf-ot1.tfm
-	GET URWClassico-Bold-lf-t1--base.tfm
-	GET URWClassico-Bold-lf-t1.tfm
-	GET URWClassico-Bold-lf-ts1--base.tfm
-	GET URWClassico-Bold-lf-ts1.tfm
-	GET URWClassico-BoldItalic-lf-ly1--base.tfm
-	GET URWClassico-BoldItalic-lf-ly1.tfm
-	GET URWClassico-BoldItalic-lf-ot1.tfm
-	GET URWClassico-BoldItalic-lf-t1--base.tfm
-	GET URWClassico-BoldItalic-lf-t1.tfm
-	GET URWClassico-BoldItalic-lf-ts1--base.tfm
-	GET URWClassico-BoldItalic-lf-ts1.tfm
-	GET URWClassico-Italic-lf-ly1--base.tfm
-	GET URWClassico-Italic-lf-ly1.tfm
-	GET URWClassico-Italic-lf-ot1.tfm
-	GET URWClassico-Italic-lf-t1--base.tfm
-	GET URWClassico-Italic-lf-t1.tfm
-	GET URWClassico-Italic-lf-ts1--base.tfm
-	GET URWClassico-Italic-lf-ts1.tfm
-	GET URWClassico-Regular-lf-ly1--base.tfm
-	GET URWClassico-Regular-lf-ly1.tfm
-	GET URWClassico-Regular-lf-ot1.tfm
-	GET URWClassico-Regular-lf-t1--base.tfm
-	GET URWClassico-Regular-lf-t1.tfm
-	GET URWClassico-Regular-lf-ts1--base.tfm
-	GET URWClassico-Regular-lf-ts1.tfm
-	GET uopb8r.tfm
-	GET uopbc7t.tfm
-	GET uopbc8t.tfm
-	GET uopr8r.tfm
-	GET uoprc7t.tfm
-	GET uoprc8t.tfm
+	GET /fonts/urw/classico/tfm/ /\.tfm$/
 	LCD /lib/latex/urw 
 	GET /fonts/urw/antiqua/latex/ot1uaq.fd
 	GET t1uaq.fd
@@ -406,14 +338,8 @@ SOURCES:
 	GET /fonts/urw/arial/latex/t1ua1.fd
 	GET ts1ua1.fd
 	GET uarial.sty
-	GET /fonts/urw/classico/latex/LY1URWClassico-LF.fd
-	GET OT1URWClassico-LF.fd
-	GET T1URWClassico-LF.fd
-	GET TS1URWClassico-LF.fd
+	GET /fonts/urw/classico/latex/ /\.fd$/
 	GET classico.sty
-	GET ot1uop.fd
-	GET t1uop.fd
-	GET ts1uop.fd
 	LCD /lib/dvips/ 
 	GET /fonts/urw/antiqua/maps/uaq.map
 	GET /fonts/urw/arial/map/ua1.map
