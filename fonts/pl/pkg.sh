@@ -55,10 +55,6 @@ pkg_get
 pkg_log ""
 pkg_log "1. Treating pl-mf (the METAFONT sources fonts; generating)."
 pkg_log ""
-cd $TMPDIR/lib/$PKG_NAME/mf
-$PKG_UNZIP pl-mf.zip
-rm pl-mf.zip
-
 pkg_log "1.1 Creating the hierarchy and putting non generated files."
 pkg_log ""
 # Others are created getting.
@@ -68,7 +64,13 @@ cd $TMPDIR/lib/$PKG_NAME/
 for subdir in doc gf pk tfm; do
 	mkdir $TMPDIR/lib/$PKG_NAME/$subdir
 done
-mv mf/README* doc
+
+cd $TMPDIR
+$PKG_UNZIP pl-mf.zip
+rm pl-mf.zip
+
+mv pl-mf*/*.mf $TMPDIR/lib/$PKG_NAME/
+mv pl-mf*/README* $TMPDIR/lib/$PKG_NAME/doc
 
 pkg_log ""
 pkg_log "1.2 Generating the gf and tfm with METAFONT"
@@ -156,16 +158,15 @@ DESCRIPTION: polish extensions to the CM fonts
 AUTHOR: Bogus\\l{}aw Jackowski, Marek Ry\\'cko
 VERSION: 1.09 (pl-mf) and 1.15 (plpsfont)
 LICENCE: Public Domain
-KERTEX_VERSION: 0.99.10.2
+KERTEX_VERSION: 0.99.22.0
 KXPATH:
 	fonts pl
 DVIPS:
 p +plother.map
 p +pltext.map
 SOURCES:
-	LCD HOME/mf 
-	GET /language/polish/pl-mf.zip
 	LCD / 
+	GET /language/polish/pl-mf.zip
 	GET plpsfont.zip
 END:
 END_CID
