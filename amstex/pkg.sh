@@ -90,32 +90,22 @@ mv amsguide.tex.fixed amsguide.tex
 cd $TMPDIR/tmp/amstex
 mv * $TMPDIR/lib/$PKG_NAME
 
-#===== TeX version
+#===== e-TeX version
 #
 # The full instructions to install are in source/amstex/README.
 #
 cd $TMPDIR/lib/$PKG_NAME
-$KERTEX_BINDIR/initex amstex.ini >$TMPDIR/.log 2>&1
+$KERTEX_BINDIR/iniprote '*amstex.ini' >$TMPDIR/.log 2>&1
 
 # Put the dump where TeX (kerTeX) looks for.
 #
 mkdir $TMPDIR/bin/lib/
-mv amstex.fmt $TMPDIR/bin/lib/
+mv amstex.dgst $TMPDIR/bin/lib/
 mv amstex.log $TMPDIR/bin/lib/
 
-# And name virtex $PKG_NAME so that he loads $PKG_NAME.fmt.
+# And name virprote $PKG_NAME so that he loads $PKG_NAME.dgst.
 #
-cp $KERTEX_BINDIR/virtex $TMPDIR/bin/amstex
-
-#===== e-TeX version
-#
-cd $TMPDIR/lib/$PKG_NAME
-$KERTEX_BINDIR/einitex '*amstex.ini'
-
-mv amstex.dgst $TMPDIR/bin/lib/amstex.dgst
-mv amstex.log $TMPDIR/bin/lib/eamstex.log
-
-cp $KERTEX_BINDIR/evirtex $TMPDIR/bin/eamstex
+cp $KERTEX_BINDIR/virprote $TMPDIR/bin/amstex
 
 #===== CUSTOM PROCESSING FINISHED
 #
