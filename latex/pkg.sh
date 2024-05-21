@@ -388,7 +388,7 @@ exit 0
 
 BEGIN_CID
 NAME: latex
-VERSION: 2022-06-01-PL5
+VERSION: 2023-11-01-PL1
 KERTEX_VERSION: 0.99.22.0
 LICENSE: The LaTeX Project Public License 1.3c
 DEPENDENCIES: tex/babel
@@ -444,9 +444,10 @@ NOTES:
 	- amsmath/doc/amsldoc needs imakeidx.sty;
 	- ltxcheck and sample2e need the EC fonts. Hence they are included
 	here.
+	- latex-lab (optional) is not included for the moment.
 
 SOURCES:
-	GET /macros/latex/contrib/l3kernel.zip
+	GET /macros/latex/required/l3kernel.zip
 	GET l3backend.zip
 	GET /macros/latex/base.zip 
 	GET /language/hyph-utf8.zip
