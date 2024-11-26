@@ -58,7 +58,8 @@ rm russian.zip
 
 cd russian
 
-pkg_lstree | sed 's/\.ins$/!d' | while read package; do
+pkg_lstree | sed '/\.ins$/!d' | while read package; do
+	package=${package#./}
 	$PKG_SED -e 's!\\askonceonly!\\askforoverwritefalse!' $package >_$package
 	mv _$package $package
 	$KERTEX_BINDIR/tex $package

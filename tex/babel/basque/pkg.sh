@@ -57,7 +57,8 @@ rm basque.zip
 
 cd basque
 
-pkg_lstree | sed 's/\.ins$/!d' | while read package; do
+pkg_lstree | sed '/\.ins$/!d' | while read package; do
+	package=${package#./}
 	$PKG_SED -e 's!\\def\\batchfile{'$package'}!\\def\\batchfile{_'$package'}!' \
 	-e 's!\\askonceonly!\\askforoverwritefalse!' $package >_$package
 	$KERTEX_BINDIR/tex _$package
