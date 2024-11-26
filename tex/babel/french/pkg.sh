@@ -58,13 +58,13 @@ rm french.zip
 
 cd french
 
-pkg_lstree | sed '/\.ins$/!d' | while read package; do
+pkg_lstree | sed '/\.dtx$/!d' | while read package; do
 	package=${package#./}
 	$PKG_SED -e 's!\\def\\batchfile{'$package'}!\\def\\batchfile{_'$package'}!' \
 	-e 's!\\askonceonly!\\askforoverwritefalse!' $package >_$package
 	$KERTEX_BINDIR/tex _$package
 	rm _$package
-	rm _${package%.ins}.log
+	rm _${package%.dtx}.log
 done
 
 
