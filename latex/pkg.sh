@@ -43,6 +43,10 @@ pkg_post_apply()
 	pkg_log "You can check the installation by processing ltxcheck."
 	pkg_log 
 	pkg_log "You can generate a sample by processing sample2e."
+	pkg_log
+	pkg_log "You can verify languages compiled in with:"
+	pkg_log "\usepackage[english,showlanguages]{babel}"
+	pkg_log
 }
 
 pkg_post_remove()
@@ -308,19 +312,36 @@ echo '\def\@currdir{./}' >>texsys.cfg
 # in fact hyphen.cfg provided by Babel (in the PATH), that, in turn,
 # loads a language.dat that we set here from SUPPORTED_LANGUAGES.
 #
-# If SUPPORTED_LANGUAGES is not set, the default will load hyphen.tex
-# i.e. the plain TeX default one ("english").
+# Since this is a requirement of packages on CTAN, we add always as
+# language 0 "english" with D.E.K.'s hyphen patterns to match 
+# the description on the TeXbook, and add as aliases usenglish,
+# USenglish and american, since this is what texmf provides and some
+# packages set Babel language as "USenglish"...
 #
+
 rm -f language.dat
+cat <<"EOT" >language.dat
+english		hyphen.tex  % what the TeXbook describes
+=usenglish
+=USenglish
+=american
+EOT
+
 if test "${SUPPORTED_LANGUAGES:-}"; then
 	for lang in $SUPPORTED_LANGUAGES; do
-		if test $lang = "norwegian"; then
-			lang=bokmal # seems to be the standard norwegian
-		fi
-		grep "^$lang " "$flang" >>language.dat || {
+		hyphname=$(echo "$lang" | $PKG_SED 'y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/')
+		test "$hyphname" != "usenglish" || continue # already added
+		test "$hyphname" != "norwegian" || hyphname=bokmal
+		fhyph=$($PKG_SED -n "s/^hyphname [ 	]*\(.*\)$/\\1/p" "$flang") 
+		if test "x$fhyph" != "x"; then
+			echo "$lang $fhyph" >>language.dat
+			test "x$hyphname" != "x$lang" \
+				|| echo "=$hyphname" >>language.dat
+		else
 			$PKG_SED 's/ .*$//' "$flang" >&2
-			pkg_error "$lang not found; lang must be a babel name in the list above...\n"
-		}
+			pkg_error "$lang ($hyphname) not found."
+			pkg_error "lang must be a babel name (minus case) in the list above...\n"
+		fi
 	done
 fi
 
@@ -428,10 +449,10 @@ NOTES:
 	that are under LaTeX Public License;	
 	- SUPPORTED_LANGUAGES, if defined, is a blanks separated string of
 	  Babel names of languages whose hyphenation patterns have to be
-	  compiled in. If not defined, D.E.K.''s hyphen.tex with language
-	  "english" will be used. "english" can also be used in
-	  SUPPORTED_LANGUAGES to get the original D.E.K.''s hyphenation
-	  patterns, Babel having "ukenglish" and "usenglishmax";
+	  compiled in. To match what packages on CTAN expect: the
+	  behavior of texmf distribution, "english" with 
+	  D.E.K.''s hyphen.tex is added first as language 0, with aliases
+	  "usenglish", "USenglish" and "american".
 	- at least line10.tfm, linew10.tfm, lcircle10.tfm and lcirclew10.tfm
 		are necessary to be able to dump the format; thus we include
 		the latex/fonts;
