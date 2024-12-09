@@ -82,7 +82,7 @@ DESCRIPTION:
   pdfmark commands for processing by Acrobat Distiller (dvips).
 VERSION: 2024-11-05 v7.01l
 LICENCE: LATEX Project Public License, version 1.3c or later
-KERTEX_VERSION: @@KERTEX_VERSION@@
+KERTEX_VERSION: 0.99.23.2
 KXPATH:
 	latex hyperref
 SOURCES:
