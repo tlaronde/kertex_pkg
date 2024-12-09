@@ -65,7 +65,12 @@ exit 0
 
 BEGIN_CID
 NAME: tex/poormanlog
-AUTHOR: Jean-François Burnol
+AUTHOR: Jean-Fran\,cois Burnol
+DESCRIPTION: 
+	This small package (usable with Plain e-TeX, LaTeX, or
+	others) with no dependencies provides two fast expandable macros
+	computing logarithms in base 10 and fractional powers of 10 with
+	(almost) 9 digits. 
 VERSION: 0.07 2022-05-25
 LICENCE: LPPL 1.3c
 KERTEX_VERSION: 0.99.23.0

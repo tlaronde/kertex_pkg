@@ -65,7 +65,8 @@ exit 0
 
 BEGIN_CID
 NAME: tex/polexpr
-AUTHOR: Jean-François Burnol
+AUTHOR: Jean-Fran\,cois Burnol
+DESCRIPTION: A parser for polynomial expressions
 VERSION: 0.8.7a 2022-05-19
 LICENCE: LPPL 1.3c
 KERTEX_VERSION: 0.99.23.0

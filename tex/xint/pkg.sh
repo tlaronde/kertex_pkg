@@ -67,7 +67,11 @@ exit 0
 
 BEGIN_CID
 NAME: tex/xint
-AUTHOR: Jean-François Burnol
+AUTHOR: Jean-Fran\,cois Burnol
+DESCRIPTION:
+	Expandable arbitrary precision floating point and integer
+	operations.
+	Bundle of xinttools, xintcore, xint, xintfrac and xintexpr.
 VERSION: 1.4m
 LICENCE: LPPL 1.3c
 KERTEX_VERSION: 0.99.23.0

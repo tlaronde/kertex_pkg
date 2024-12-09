@@ -65,12 +65,17 @@ exit 0
 
 BEGIN_CID
 NAME: tex/xintsession
-AUTHOR: Jean-François Burnol
+AUTHOR: Jean-Fran\,cois Burnol
+DESCRIPTION:
+	Interactive computing sessions (fractions, floating points,
+	polynomials) with etex, executed on the command line, on the
+	basis of the xintexpr and polexpr packages. 
 VERSION: 0.4alpha 2021-11-01
 LICENCE: LPPL 1.3c
 KERTEX_VERSION: 0.99.23.0
 DEPENDENCIES:
 	tex/poormanlog
+	tex/polexpr
 	tex/xint
 KXPATH:
 	tex xintsession
