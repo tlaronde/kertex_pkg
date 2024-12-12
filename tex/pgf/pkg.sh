@@ -94,7 +94,9 @@ DESCRIPTION:
 	platform- and format-independent and works together with the
 	most important TeX backend drivers, including pdfTeX and dvips. 
 	It comes with a user-friendly syntax layer called TikZ. 
-KERTEX_VERSION: 0.99.23.0
+KERTEX_VERSION: 0.99.24.0
+DEPENDENCIES:
+	tex/atbegshi
 KXPATH:
 	tex pgf/context/basiclayer
 	tex pgf/context/frontendlayer
