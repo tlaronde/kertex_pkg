@@ -1,6 +1,6 @@
 #
 # This is a strictly POSIX 1003.2 shell (Bourne shell) script 
-# automatically generated to add Yannis Haralambous' olld German
+# automatically generated to add Yannis Haralambous' old German
 # gothic font to kerTeX.
 #
 # No shebang, since there is a bootstrapping problem: this script has
