@@ -87,7 +87,7 @@ NAME: fonts/yfonts-t1
 AUTHOR:
 	Torsten Bronger
 	Yannis Haralambous
-DESCRIPTION: PostScript T1 implementation of yfrak, yswab, yfonts-t1.
+DESCRIPTION: PostScript T1 implementation of yfrak, ygoth and yswab.
 	  This PostScript Type 1 implementation of the fonts yfrak,
 	yswab and ygoth, originally created by Yannis Haralambous using
 	METAFONT, is freely available for general use.
