@@ -54,17 +54,22 @@ $PKG_UNZIP base.zip
 rm base.zip
 
 pkg_log "1) Installing documentation;"
-mv base/doc $TMPDIR/lib/$PKG_NAME/
+pkg_dircp base/doc $TMPDIR/lib/$PKG_NAME/doc
+rm -fr base/doc
 
 pkg_log "2) Installing shared files;"
-mv base/tex/context $TMPDIR/lib/$PKG_NAME/
-mv base/tex/generic $TMPDIR/lib/$PKG_NAME/
+pkg_dircp base/tex/context $TMPDIR/lib/$PKG_NAME/context
+rm -fr base/tex/context
+pkg_dircp base/tex/generic $TMPDIR/lib/$PKG_NAME/generic
+rm -fr base/tex/generic
 
 pkg_log "3) Installing plain TeX support;"
-mv base/tex/plain $TMPDIR/lib/$PKG_NAME/
+pkg_dircp base/tex/plain $TMPDIR/lib/$PKG_NAME/
+rm -fr base/tex/plain
 
 pkg_log "4) Installing LaTeX support;"
-mv base/tex/latex $TMPDIR/lib/$PKG_NAME/
+pkg_dircp base/tex/latex $TMPDIR/lib/$PKG_NAME/latex
+rm -fr base/tex/latex
 
 # The path will be added by KXPATH. So we let files here.
 

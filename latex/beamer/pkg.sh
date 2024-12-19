@@ -64,9 +64,9 @@ rm beamer.zip
 
 # Useless to have a subdir for point entry classes.
 #
-cd $TMPDIR/lib/$PKG_NAME/
-mv base/* .
-$PKG_RMDIR base
+cd $TMPDIR/lib/$PKG_NAME
+pkg_dircp base .
+rm -fr base
 
 # The path will be added by KXPATH. So we let files here.
 
