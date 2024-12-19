@@ -413,6 +413,7 @@ VERSION: 2023-11-01-PL1
 KERTEX_VERSION: 0.99.22.0
 LICENSE: The LaTeX Project Public License 1.3c
 DEPENDENCIES: tex/babel
+	tex/babel/english
 KXPATH:
 	fonts latex;ec; 
 	fonts bitstrea/charter
