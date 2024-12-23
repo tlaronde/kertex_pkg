@@ -332,7 +332,7 @@ if test "${SUPPORTED_LANGUAGES:-}"; then
 		hyphname=$(echo "$lang" | $PKG_SED 'y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/')
 		test "$hyphname" != "usenglish" || continue # already added
 		test "$hyphname" != "norwegian" || hyphname=bokmal
-		fhyph=$($PKG_SED -n "s/^hyphname [ 	]*\(.*\)$/\\1/p" "$flang") 
+		fhyph=$($PKG_SED -n "s/^$hyphname [ 	]*\(.*\)$/\\1/p" "$flang") 
 		if test "x$fhyph" != "x"; then
 			echo "$lang $fhyph" >>language.dat
 			test "x$hyphname" != "x$lang" \
