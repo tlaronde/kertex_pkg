@@ -7,7 +7,7 @@
 # It has to be invoked with whatever Bourne shell like interpreter is
 # present on the host.
 #
-# C) 2010-2012, 2016, 2017, 2019--2024
+# C) 2010-2012, 2016, 2017, 2019--2025
 #	Thierry Laronde <tlaronde@polynum.com>
 # All rights reserved and absolutely no warranty! Use at your own 
 # risks.
@@ -146,13 +146,13 @@ mkdir -p "$TMPDIR/lib/$PKG_NAME/hyph-utf8/doc/"
 cd "hyph-utf8"
 
 # The doc...
-cd "doc/generic/hyph-utf8/"
-mv CHANGES HISTORY *.pdf *.tex $TMPDIR/lib/$PKG_NAME/hyph-utf8/doc/
+pkg_dircp doc "$TMPDIR/lib/$PKG_NAME/hyph-utf8/doc"
+rm -fr doc
 
 # The patterns, retrieving the specifications by the way...
 flang="$TMPDIR/all_languages.dat"
 echo "english hyphen.tex" >"$flang" # the default; not Babel name
-cd ../../../tex/generic/hyph-utf8/patterns/tex/
+cd tex/patterns/tex/
 for file in hyph-*.tex; do
 	# Use only new classiclatin
 	test "$file" != "hyph-la-x-classic.ec.tex" || continue
@@ -409,8 +409,8 @@ exit 0
 
 BEGIN_CID
 NAME: latex
-VERSION: 2023-11-01-PL1
-KERTEX_VERSION: 0.99.22.0
+VERSION: 2024-11-01
+KERTEX_VERSION: 0.99.25.0
 LICENSE: The LaTeX Project Public License 1.3c
 DEPENDENCIES: tex/babel
 	tex/babel/english
