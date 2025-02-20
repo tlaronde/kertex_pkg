@@ -103,7 +103,7 @@ customization. It includes:
 	- figcaps, to send figure captions etc., to end document;
 	- fullpage, to set narrow page margins and set a fixed
 	page style;
-	- sublabel, which permits coutners to be subnumbered.
+	- sublabel, which permits counters to be subnumbered.
 VERSION: 1.1
 LICENCE: The LaTeX Project Public License
 KERTEX_VERSION: 0.99.25.00
