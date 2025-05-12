@@ -363,7 +363,19 @@ cp $KERTEX_BINDIR/virprote $TMPDIR/bin/$PKG_NAME
 
 pkg_log "7) Adding the EC fonts (needed for sample2e and recommended)..."
 #
-cd $TMPDIR/lib/fonts/ec/
+cd $TMPDIR/lib/fonts/
+$PKG_UNZIP ec.zip
+rm ec.zip
+cd ec
+mkdir mf
+cd src
+mv *.mf ../mf
+mv *.* ..
+cd ..
+$PKG_RMDIR src
+rm -fr ready-mf
+rm -fr tfm
+rm -fr contrib
 
 # generate driver files.
 # replace '$ MF' by 'mf'.
@@ -493,10 +505,7 @@ SOURCES:
 	LCD mf/
 	GET mf/ /\.mf$/
 	LCD HOME/
-	GET /macros/generic/unicode-data/UnicodeData.txt
-	GET CaseFolding.txt
-	GET SpecialCasing.txt
-	GET GraphemeBreakProperty.txt
+	GET /macros/generic/unicode-data/ /\.[^.].*$/
 	LCD HOME/required/
 	GET /macros/latex/required/tools.zip
 	GET graphics.zip 
@@ -531,11 +540,8 @@ SOURCES:
 	GET /macros/generic/iftex.zip
 	GET ltxcmds.zip
 	GET pdftexcmds.zip
-	LCD /lib/fonts/ec/
-	GET /fonts/ec/src/ /.*\.txt$/
-	GET ./ /.*\.tex$/
-	LCD mf/
-	GET ./ /.*\.mf$/
+	LCD /lib/fonts/
+	GET /fonts/ec.zip
 	LCD /lib/fonts/utopia/
 	GET /fonts/utopia/LICENSE-utopia.txt
 	GET README-utopia.txt
