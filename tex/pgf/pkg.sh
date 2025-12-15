@@ -8,7 +8,7 @@
 # It has to be invoked with whatever Bourne shell like interpreter is
 # present on the host.
 #
-# C) 2024 Thierry Laronde <tlaronde@polynum.com>
+# C) 2024, 2025 Thierry Laronde <tlaronde@polynum.com>
 # All rights reserved and absolutely no warranty! Use at your own 
 # risks.
 #
@@ -58,9 +58,11 @@ pkg_dircp base/doc $TMPDIR/lib/$PKG_NAME/doc
 rm -fr base/doc
 
 pkg_log "2) Installing shared files;"
-pkg_dircp base/tex/context $TMPDIR/lib/$PKG_NAME/context
+pkg_dircp base/tex/context/third/pgf $TMPDIR/lib/$PKG_NAME/context
 rm -fr base/tex/context
-pkg_dircp base/tex/generic $TMPDIR/lib/$PKG_NAME/generic
+pkg_dircp base/tex/generic/pgf $TMPDIR/lib/$PKG_NAME/generic
+rm -fr $TMPDIR/lib/$PKG_NAME/generic/lua
+rm -fr $TMPDIR/lib/$PKG_NAME/generic/graphdrawing/lua
 rm -fr base/tex/generic
 
 pkg_log "3) Installing plain TeX support;"
@@ -68,7 +70,7 @@ pkg_dircp base/tex/plain $TMPDIR/lib/$PKG_NAME/
 rm -fr base/tex/plain
 
 pkg_log "4) Installing LaTeX support;"
-pkg_dircp base/tex/latex $TMPDIR/lib/$PKG_NAME/latex
+pkg_dircp base/tex/latex/pgf $TMPDIR/lib/latex/pgf
 rm -fr base/tex/latex
 
 # The path will be added by KXPATH. So we let files here.
@@ -86,10 +88,12 @@ exit 0
 
 BEGIN_CID
 NAME: tex/pgf
+VERSION: 3.1.11a 2025-08-29
 AUTHORS:
-	2005-2016 Till Tantau
-	2019-2020 Henri Menke
-	2021-2023 The PGF/TikZ Team
+	Christian Feuersänger
+	Henri Menke
+	The PGF/TikZ Team
+	Till Tantau
 LICENCE:
 	Free Documentation license
 	The LaTeX Project Public License 1.3c
@@ -99,7 +103,7 @@ DESCRIPTION:
 	platform- and format-independent and works together with the
 	most important TeX backend drivers, including pdfTeX and dvips. 
 	It comes with a user-friendly syntax layer called TikZ. 
-KERTEX_VERSION: 0.99.24.0
+KERTEX_VERSION: 0.99.26.0
 DEPENDENCIES:
 	tex/atbegshi
 KXPATH:
@@ -127,19 +131,19 @@ KXPATH:
 	tex pgf/generic/modules
 	tex pgf/generic/systemlayer
 	tex pgf/generic/utilities
-	tex pgf/latex/basiclayer
-	tex pgf/latex/compatibility
-	tex pgf/latex/doc
-	tex pgf/latex/frontendlayer
-	tex pgf/latex/frontendlayer/libraries
-	tex pgf/latex/math
-	tex pgf/latex/systemlayer
-	tex pgf/latex/utilities
 	tex pgf/basiclayer
 	tex pgf/frontendlayer
 	tex pgf/math
 	tex pgf/systemlayer
 	tex pgf/utilities
+	latex pgf/basiclayer
+	latex pgf/compatibility
+	latex pgf/doc
+	latex pgf/frontendlayer
+	latex pgf/frontendlayer/libraries
+	latex pgf/math
+	latex pgf/systemlayer
+	latex pgf/utilities
 SOURCES:
 	GET /graphics/pgf/base.zip
 END:
