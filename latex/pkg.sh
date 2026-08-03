@@ -421,8 +421,8 @@ exit 0
 
 BEGIN_CID
 NAME: latex
-VERSION: 2024-11-01
-KERTEX_VERSION: 0.99.25.0
+VERSION: 2026-06-01
+KERTEX_VERSION: 0.99.27.00
 LICENSE: The LaTeX Project Public License 1.3c
 DEPENDENCIES: tex/babel
 	tex/babel/english
