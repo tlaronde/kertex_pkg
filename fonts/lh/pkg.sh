@@ -10,7 +10,7 @@
 #
 # (C) 2012 Yellow Rabbit <yrabbit@sdf.lonestar.org>
 # (simple adaptation for lh of one of Thierry Laronde's scripts)
-# C) 2020, 2024
+# C) 2020, 2024, 2026
 #   Thierry Laronde <tlaronde@polynum.com>
 # All rights reserved and absolutely no warranty! Use at your own
 # risks.
@@ -79,10 +79,15 @@ $KERTEX_BINDIR/tex 99allenc
 cd wrk/lh-t2a/
 KERTEXINPUTS="${TMPDIR}/tmp/texmf/fonts/source/lh/base;KERTEXSYS"
 export KERTEXINPUTS
+ed -s labatch.bat <<EOT
+g/^mf /s!^!$KERTEX_BINDIR/!
+w
+q
+EOT
 . ./labatch.bat
 
 # pack the generic font files
-find . -name "*gf" -exec gftopk \{\} \;
+find . -name "*gf" -exec $KERTEX_BINDIR/gftopk \{\} \;
 
 # move the tfm files
 mkdir -p $TMPDIR/lib/fonts/lh/tfm

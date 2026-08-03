@@ -8,7 +8,7 @@
 # It has to be invoked with whatever Bourne shell like interpreter is
 # present on the host.
 #
-# C) 2024 Thierry Laronde <tlaronde@polynum.com>
+# C) 2024, 2026 Thierry Laronde <tlaronde@polynum.com>
 # All rights reserved and absolutely no warranty! Use at your own 
 # risks.
 #
@@ -65,8 +65,8 @@ KERTEXINPUTS="..;KERTEXSYS"
 export KERTEXINPUTS
 # Silence METAFONT warnings about convoluted paths.
 #
-mf "\\mode=ljfour; scrollmode; input yswab"
-gftopk yswab.600gf
+$KERTEX_BINDIR/mf "\\mode=ljfour; scrollmode; input yswab"
+$KERTEX_BINDIR/gftopk yswab.600gf
 rm *.600gf
 mv *.600pk *.log ../pk
 

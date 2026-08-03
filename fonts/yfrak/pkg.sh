@@ -8,7 +8,7 @@
 # It has to be invoked with whatever Bourne shell like interpreter is
 # present on the host.
 #
-# C) 2024 Thierry Laronde <tlaronde@polynum.com>
+# C) 2024, 2026 Thierry Laronde <tlaronde@polynum.com>
 # All rights reserved and absolutely no warranty! Use at your own 
 # risks.
 #
@@ -60,10 +60,10 @@ mkdir pk
 cd tfm
 KERTEXINPUTS="..;KERTEXSYS"
 export KERTEXINPUTS
-mf "\\mode=ljfour; scrollmode; input yfrak"
-gftopk yfrak.600gf
-mf "\\mode=ljfour; scrollmode; input ysmfrak"
-gftopk ysmfrak.600gf
+$KERTEX_BINDIR/mf "\\mode=ljfour; scrollmode; input yfrak"
+$KERTEX_BINDIR/gftopk yfrak.600gf
+$KERTEX_BINDIR/mf "\\mode=ljfour; scrollmode; input ysmfrak"
+$KERTEX_BINDIR/gftopk ysmfrak.600gf
 rm *.600gf
 mv *.600pk *.log ../pk
 
