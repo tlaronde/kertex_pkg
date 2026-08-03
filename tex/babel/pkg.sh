@@ -7,7 +7,7 @@
 # It has to be invoked with whatever Bourne shell like interpreter is
 # present on the host.
 #
-# C) 2020, 2024
+# C) 2020, 2024, 2026
 #	Thierry Laronde <tlaronde@polynum.com>
 # All rights reserved and absolutely no warranty! Use at your own 
 # risks.
@@ -77,9 +77,9 @@ exit 0
 
 BEGIN_CID
 NAME: tex/babel
-VERSION: 3.50
+VERSION: 26.9 2026-06-14
 DEPENDENCIES: tex/docstrip
-KERTEX_VERSION: 0.99.22.0
+KERTEX_VERSION: 0.99.27.00
 LICENSE: The LaTeX Public License 1.3
 KXPATH:
 	tex babel
@@ -91,6 +91,7 @@ SOURCES:
 	GET babel.pdf
 	GET bbcompat.dtx
 	GET bbidxglo.dtx
+	GET licr2uni.dtx
 	GET locale.zip
 END:
 END_CID
