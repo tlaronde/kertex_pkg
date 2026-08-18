@@ -7,7 +7,7 @@
 # It has to be invoked with whatever Bourne shell like interpreter is
 # present on the host.
 #
-# C) 2010-2012, 2016, 2017, 2019--2025
+# C) 2010-2012, 2016, 2017, 2019--2026
 #	Thierry Laronde <tlaronde@polynum.com>
 # All rights reserved and absolutely no warranty! Use at your own 
 # risks.
@@ -99,11 +99,6 @@ rm $TMPDIR/l3kernel.zip
 cd l3kernel
 KERTEXINPUTS=".;.." # .. for docstrip.tex
 echo '\input l3.ins'|$KERTEX_BINDIR/iniprote
-cd ..
-$PKG_UNZIP $TMPDIR/l3backend.zip
-rm $TMPDIR/l3backend.zip
-cd l3backend
-echo '\input l3backend.ins'|$KERTEX_BINDIR/iniprote
 mkdir $TMPDIR/lib/dvips
 mv l3backend-dvips.pro $TMPDIR/lib/dvips
 cd ..
@@ -421,7 +416,7 @@ exit 0
 
 BEGIN_CID
 NAME: latex
-VERSION: 2026-06-01
+VERSION: 2026-08-17 (l3kernel now includes l3backend)
 KERTEX_VERSION: 0.99.27.00
 LICENSE: The LaTeX Project Public License 1.3c
 DEPENDENCIES: tex/babel
@@ -446,7 +441,7 @@ KXPATH:
 	fonts psnfss
 	fonts public/pazo
 	fonts utopia
-	latex l3kernel;l3backend;required/tools;required/firstaid;required/graphics;required/graphics-cfg;required/cyrillic;required/cyrillic;required/amscls;required/amsmath;required/latexbug;required/psnfss
+	latex l3kernel;required/tools;required/firstaid;required/graphics;required/graphics-cfg;required/cyrillic;required/cyrillic;required/amscls;required/amsmath;required/latexbug;required/psnfss
 	latex pkg-misc
 	bibtex ams
 DVIPS:
@@ -482,7 +477,6 @@ NOTES:
 
 SOURCES:
 	GET /macros/latex/required/l3kernel.zip
-	GET l3backend.zip
 	GET /macros/latex/base.zip 
 	GET /language/hyph-utf8.zip
 	GET hyphenation/bghyphen.zip
